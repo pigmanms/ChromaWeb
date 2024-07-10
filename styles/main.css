@@ -60,7 +60,7 @@ body, html {
 
 .spinningText {
     position: absolute;
-    font-size: 8em;
+    font-size: 7em;
     color: white;
     animation: randomSpin 3s linear infinite, chromaRainbow 2s linear infinite;
 }
