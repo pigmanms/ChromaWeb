@@ -10,17 +10,20 @@ document.getElementById('startButton').addEventListener('click', () => {
         // Create small texts with the same user input string
         const animationContainer = document.getElementById('animationContainer');
         for (let i = 0; i < 20; i++) {
-            createSpinningText(userInput, animationContainer);
+            createSpinningText(userInput, animationContainer, true);
         }
     }
 });
 
-function createSpinningText(text, container) {
+function createSpinningText(text, container, isSmall = false) {
     const textElement = document.createElement('div');
     textElement.classList.add('spinningText');
     textElement.innerText = text;
     textElement.style.left = `${Math.random() * 100}%`;
     textElement.style.top = `${Math.random() * 100}%`;
-    textElement.style.animationDuration = `${Math.random() * 5 + 1}s`;
+    if (isSmall) {
+        textElement.style.fontSize = '0.5em';
+        textElement.style.animationDuration = '2s';
+    }
     container.appendChild(textElement);
 }
