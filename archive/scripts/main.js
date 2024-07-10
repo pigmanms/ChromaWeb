@@ -4,13 +4,11 @@ document.getElementById('startButton').addEventListener('click', () => {
         document.getElementById('inputContainer').style.display = 'none';
         document.getElementById('animationContainer').style.display = 'block';
         
-        const mainText = document.getElementById('mainText');
-        mainText.innerText = userInput;
-
-        // Create small texts with the same user input string
         const animationContainer = document.getElementById('animationContainer');
+        createSpinningText(userInput, animationContainer);
+        
         for (let i = 0; i < 20; i++) {
-            createSpinningText(userInput, animationContainer, true);
+            createSpinningText(generateRandomText(), animationContainer, true);
         }
     }
 });
@@ -26,4 +24,13 @@ function createSpinningText(text, container, isSmall = false) {
         textElement.style.animationDuration = '2s';
     }
     container.appendChild(textElement);
+}
+
+function generateRandomText() {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < 5; i++) {
+        result += chars.charAt(Math.floor(Math.random() * chars.length));
+    }
+    return result;
 }
