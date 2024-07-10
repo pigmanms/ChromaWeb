@@ -28,7 +28,7 @@ body, html {
     display: none;
     background: linear-gradient(135deg, rgba(255, 0, 0, 0.6), rgba(255, 127, 0, 0.6), rgba(255, 255, 0, 0.6), rgba(0, 255, 0, 0.6), rgba(0, 255, 255, 0.6), rgba(0, 0, 255, 0.6), rgba(127, 0, 255, 0.6));
     background-size: 400% 400%;
-    animation: chromaRainbow 2s linear infinite;
+    animation: chromaRainbow 3s linear infinite, rotateBackground 30s linear infinite;
     overflow: hidden;
 }
 
@@ -38,6 +38,11 @@ body, html {
     100% { background-position: 0% 0%; }
 }
 
+@keyframes rotateBackground {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
 @keyframes spin {
     0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
     100% { transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg); }
@@ -45,7 +50,7 @@ body, html {
 
 @keyframes randomSpin {
     0% { transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg); }
-    100% { transform: rotateX(720deg) rotateY(1440deg) rotateZ(2160deg); }
+    100% { transform: rotateX(360deg) rotateY(720deg) rotateZ(1080deg); }
 }
 
 #mainText {
@@ -53,14 +58,14 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 10em;
+    font-size: 5em;
     color: white;
-    animation: spin 2s linear infinite, chromaRainbow 2s linear infinite;
+    animation: spin 10s linear infinite, chromaRainbow 3s linear infinite;
 }
 
 .spinningText {
     position: absolute;
-    font-size: 8em;
+    font-size: 1em;
     color: white;
-    animation: randomSpin 3s linear infinite, chromaRainbow 2s linear infinite;
+    animation: randomSpin 5s linear infinite, chromaRainbow 3s linear infinite;
 }

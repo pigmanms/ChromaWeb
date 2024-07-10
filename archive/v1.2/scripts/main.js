@@ -9,7 +9,7 @@ document.getElementById('startButton').addEventListener('click', () => {
 
         // Create small texts with the same user input string
         const animationContainer = document.getElementById('animationContainer');
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < 20; i++) {
             createSpinningText(userInput, animationContainer);
         }
     }
@@ -21,6 +21,6 @@ function createSpinningText(text, container) {
     textElement.innerText = text;
     textElement.style.left = `${Math.random() * 100}%`;
     textElement.style.top = `${Math.random() * 100}%`;
-    textElement.style.animationDuration = `${Math.random() * 2 + 1}s`;
+    textElement.style.animationDuration = `${Math.random() * 5 + 1}s`;
     container.appendChild(textElement);
 }
